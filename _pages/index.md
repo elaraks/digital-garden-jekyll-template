@@ -5,10 +5,10 @@ id: home
 permalink: /
 ---
 
-# Welcome! 🌱
+# Damp Capital: 
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
+ <span style="font-weight: bold"> Housing conditions as accumulative disposession.</span><li>A live archive of research, examining London's social housing.</li>
 </p>
 
 This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
