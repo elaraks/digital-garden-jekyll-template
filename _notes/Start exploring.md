@@ -2,8 +2,6 @@
 title: Unravelling the damp capital
 ---
 
-This repository is designed to be n
+In 2021, an ongoing [[ITV investigation]] brought to light a scandal of cases of damp in social housing across the country.
 
-Rather than a book, where page order leads  
-
-Then go take a look at the [[Your first note|first note]].
+ [[Your first note|first note]].
