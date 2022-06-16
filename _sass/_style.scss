@@ -113,11 +113,13 @@ nav {
   grid-gap: 2em;
   grid-template-areas:
     "content"
-    "side";
+    "side"
+    "top"
+    "bottom";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
-    grid-template-areas: "content side";
+    grid-template-areas: "content side bottom";
   }
 }
 
@@ -126,11 +128,13 @@ nav {
     grid-gap: 2em;
     grid-template-areas:
         "content"
-        "side";
+        "side"
+        "top"
+        "bottom";
     
     @media (min-width: 700px) {
         grid-template-columns: 3fr 1fr;
-        grid-template-areas: "content side"
+        grid-template-areas: "content side top"
     }
 }
 
