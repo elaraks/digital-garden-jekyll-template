@@ -124,8 +124,8 @@ nav {
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1.5fr auto;
   grid-template-areas:
-    "content" "side1"
-    "content" "side2";
+    "content" "1"
+    "content" "2";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
@@ -148,7 +148,7 @@ nav {
 }
 
 .backlink-box {
-  grid-area: side2;
+  grid-area: 2;
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
@@ -159,7 +159,7 @@ nav {
 }
 
 .graph-box {
-  grid-area: side1;
+  grid-area: 1;
 background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
