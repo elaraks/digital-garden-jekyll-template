@@ -26,6 +26,10 @@ body {
   }
 }
 
+main {
+    background-color: $color-box-background;
+}
+
 time {
   display: block;
   color: $color-subtext;
