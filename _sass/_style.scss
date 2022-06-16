@@ -120,9 +120,11 @@ nav {
 
 #notes-entry-container {
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 1.5em;
   grid-template-areas:
-    "content side1 side2";
+    "content"
+    "side1"
+    "side2";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
@@ -143,7 +145,7 @@ nav {
 }
 
 .backlink-box {
-  background: $color-box-background;
+  background: white;
   padding: 1em;
   border-radius: $border-radius;
   grid-column-start: 2;
@@ -153,7 +155,7 @@ nav {
 }
 
 .graph-box {
-  background: $color-box-background;
+  background: white;
   padding: 1em;
   border-radius: $border-radius;
       grid-column-start: 2;
