@@ -129,7 +129,7 @@ nav {
     "content side2";
 
   @media (min-width: 700px) {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     grid-template-areas: "content side1 content side2";
   }
 }
@@ -141,8 +141,8 @@ nav {
        "content side1"
        "content side2";
 
-    @media (min-width: 700px) {
-        grid-template-columns: 3fr 1fr;
+    @media (min-width: 700px, max-height: 400px) {
+        grid-template-columns: 3fr 1fr 1fr;
         grid-template-areas: "content side1 content side2"
     }
 }
