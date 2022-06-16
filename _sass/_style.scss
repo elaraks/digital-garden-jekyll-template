@@ -132,16 +132,34 @@ nav {
   }
 }
 
+.post {
+   background: white;
+    padding: 1em;
+    border-radius: $border-radius
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1-start;
+    grid-column-end: 2-end;
+}
+
 .backlink-box {
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
+  grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2-start;
+    grid-column-end: 2-end;
 }
 
 .graph-box {
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
+      grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1-start;
+    grid-column-end: 1-end;
 }
 
 code {
