@@ -120,7 +120,8 @@ nav {
 
 #notes-entry-container {
   display: grid;
-  grid-gap: 1em;
+  grid-column-gap: 1em;
+  grid-row-gap: 1.5em;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1.5fr auto;
   grid-template-areas:
@@ -129,10 +130,10 @@ nav {
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1.5fr auto;
+    grid-template-rows: 1.5fr 1.5fr;
     grid-template-areas: 
-        "content side1"
-        "content side2";
+        "content 1"
+        "content 2";
   }
 }
 
