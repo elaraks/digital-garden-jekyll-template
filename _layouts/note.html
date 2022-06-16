@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-
-<article>
+<article> 
   <div>
     <h1>{{ page.title }}</h1>
     <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% if page.type != 'pages' %}
@@ -12,8 +11,9 @@ layout: default
   </div>
 
   <div id="notes-entry-container">
-    <content>
+    <content> <main>
       {{ content }}
+        </main>
     </content>
    
     <slide1>
@@ -43,6 +43,6 @@ layout: default
     </side2>
       
   </div>
+</main>
 </article>
-
 <hr>
