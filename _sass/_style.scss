@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   color: $color-text;
   font-size: 1rem;
-  max-width: 60em;
+  max-width: 62em;
 
   @media (min-width: 820px) {
     font-size: 1.2rem;
@@ -116,7 +116,7 @@ nav {
     "side";
 
   @media (min-width: 700px) {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "content side";
   }
 }
@@ -129,7 +129,7 @@ nav {
         "side";
     
     @media (min-width: 700px) {
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: "content side"
     }
 }
