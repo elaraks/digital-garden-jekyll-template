@@ -124,7 +124,8 @@ nav {
   grid-gap: 2em;
   grid-template-areas:
     "content"
-    "side side";
+    "side"
+    "side";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
@@ -137,7 +138,8 @@ nav {
     grid-gap: 2em;
     grid-template-areas:
         "content"
-        "side side";
+        "side"
+        "side";
     
     @media (min-width: 700px) {
         grid-template-columns: 3fr 1fr;
