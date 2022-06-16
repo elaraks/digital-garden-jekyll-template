@@ -145,7 +145,7 @@ nav {
 }
 
 .backlink-box {
-  background: white;
+  background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
   grid-column-start: 2;
@@ -155,7 +155,7 @@ nav {
 }
 
 .graph-box {
-  background: white;
+  background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
       grid-column-start: 2;
