@@ -149,13 +149,13 @@ nav {
 
 .backlink-box {
   grid-area: side2;
-    background: $color-box-background;
+  background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
   grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2-start;
-    grid-column-end: 2-end;
+  grid-column-end: 2;
+  grid-row-start: 1-end;
+  grid-column-end: 2-end;
 }
 
 .graph-box {
