@@ -141,7 +141,10 @@ nav {
     background: white;
     padding: 1em;
     border-radius: $border-radius;
-    
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 .backlink-box {
@@ -149,7 +152,10 @@ nav {
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
- 
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-column-end: 2;
+  grid-row-end: 2;
 }
 
 .graph-box {
@@ -157,7 +163,10 @@ nav {
 background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
-   
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 1;
 }
 
 code {
