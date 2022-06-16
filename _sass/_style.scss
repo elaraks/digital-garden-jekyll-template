@@ -11,8 +11,15 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
 body {
   background-image: url("./assets/Dampheat.png") no-repeat 0 0;
   background-color: $color-background;
-  box-sizing: content-box;
-  font-family: $font-family;
+  min-height: 100%;
+
+}
+
+main {
+    background-color: white;
+    padding: 4vh 6vw;
+    box-sizing: content-box;
+   font-family: $font-family;
   margin: 0 auto;
   line-height: 1.7;
   padding: 4vh 6vw;
@@ -26,11 +33,6 @@ body {
   }
 }
 
-main {
-    background-color: white;
-      padding: 4vh 6vw;
-
-}
 
 time {
   display: block;
