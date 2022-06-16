@@ -8,9 +8,9 @@ $border-radius: 4px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-html {
+background {
   padding: 0px;
-  background:url("Dampheat.png");
+  background:url(/Dampheat.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: scroll;
@@ -126,12 +126,14 @@ nav {
   grid-gap: 2em;
   grid-template-areas:
     "content"
-    "side side";
+       "side1"
+       "side2";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "content side side";
+    grid-template-areas: "content side1"
+        "content side2";
   }
 }
 
@@ -140,12 +142,14 @@ nav {
     grid-gap: 2em;
     grid-template-areas:
        "content"
-       "side side";
+       "side1"
+       "side2";
 
     @media (min-width: 700px) {
         grid-template-columns: 3fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-template-areas: "content side side"
+        grid-template-areas: "content side 1"
+            "content side2";
     }
 }
 
