@@ -9,7 +9,7 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
 body {
-  background-image: url('file://my-digital-garden/assets/Dampheat.png') no-repear center center;
+  background-image: url('/assets/Dampheat.png') no-repear center center;
   background-color: $color-background;
   box-sizing: content-box;
   font-family: $font-family;
@@ -27,7 +27,9 @@ body {
 }
 
 main {
-    background-color: $color-box-background;
+    background-color: white;
+      padding: 4vh 6vw;
+
 }
 
 time {
