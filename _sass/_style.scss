@@ -122,8 +122,7 @@ nav {
   display: grid;
   grid-gap: 2em;
   grid-template-areas:
-    "content side1"
-    "content side2";
+    "content side1 side2";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
@@ -133,23 +132,13 @@ nav {
   }
 }
 
-#notes-graph-container {
-    display: grid;
-    grid-gap: 2em;
-    grid-template-areas:
-       "content side1"
-       "content side2";
-
-    @media (min-width: 700px) {
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "content side 1"
-            "content side2";
-    }
+.backlink-box {
+  background: $color-box-background;
+  padding: 1em;
+  border-radius: $border-radius;
 }
 
-
-.backlink-box {
+.graph-box {
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
