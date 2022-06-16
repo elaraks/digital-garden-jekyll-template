@@ -9,10 +9,10 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
 header {
-  background-image:url('../assets/dampheat.png'); }
+  background:white }
 
 body {
-  background:white;
+  background-image:url('../assets/dampheat.png'); 
   box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
@@ -119,9 +119,8 @@ nav {
   display: grid;
   grid-gap: 2em;
   grid-template-areas:
-    "content"
-       "side1"
-       "side2";
+    "content side1"
+    "content side2";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
@@ -135,9 +134,8 @@ nav {
     display: grid;
     grid-gap: 2em;
     grid-template-areas:
-       "content"
-       "side1"
-       "side2";
+       "content side1"
+       "content side2";
 
     @media (min-width: 700px) {
         grid-template-columns: 3fr 1fr;
