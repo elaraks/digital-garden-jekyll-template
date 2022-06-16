@@ -10,6 +10,7 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
 
 body {
   background-image:url('../assets/dampheat.png'); 
+  background-size: cover;
   box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
@@ -122,6 +123,7 @@ nav {
   display: grid;
   grid-gap: 1.5em;
   grid-template-areas:
+    "title"
     "content"
     "side1"
     "side2";
@@ -129,7 +131,7 @@ nav {
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "content side1"
+    grid-template-areas: "title side1"
         "content side2";
   }
 }
