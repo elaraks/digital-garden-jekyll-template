@@ -8,7 +8,7 @@ $border-radius: 4px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-.header{
+html {
   padding: 0px;
   background:url("Dampheat.png");
   background-repeat: no-repeat;
@@ -143,7 +143,8 @@ nav {
        "side side";
 
     @media (min-width: 700px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: "content side side"
     }
 }
