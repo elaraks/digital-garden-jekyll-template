@@ -10,7 +10,7 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
 
 .header{
   padding: 0px;
-  background:url(Dampheat.png);
+  background:url("Dampheat.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: scroll;
@@ -125,13 +125,13 @@ nav {
   display: grid;
   grid-gap: 2em;
   grid-template-areas:
-    "content side1"
-    "content side2";
+    "content"
+    "side side";
 
   @media (min-width: 700px) {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "content side1 content side2";
+    grid-template-areas: "content side side";
   }
 }
 
@@ -139,12 +139,12 @@ nav {
     display: grid;
     grid-gap: 2em;
     grid-template-areas:
-       "content side1"
-       "content side2";
+       "content"
+       "side side";
 
     @media (min-width: 700px) {
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "content side1 content side2"
+        grid-template-areas: "content side side"
     }
 }
 
