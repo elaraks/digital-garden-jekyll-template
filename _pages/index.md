@@ -11,9 +11,3 @@ permalink: /
 </p>
 
 [[Start exploring]] the <i>damp capital</i>.
-
-<style>
-  .wrapper {
-    max-width: 46em;
-  }
-</style>
