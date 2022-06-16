@@ -134,7 +134,8 @@ nav {
 }
 
 .post {
-   background: white;
+    grid-area: content;
+    background: white;
     padding: 1em;
     border-radius: $border-radius;
     grid-column-start: 1;
@@ -144,7 +145,8 @@ nav {
 }
 
 .backlink-box {
-  background: $color-box-background;
+  grid-area: side2;
+    background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
   grid-column-start: 2;
@@ -154,7 +156,8 @@ nav {
 }
 
 .graph-box {
-  background: $color-box-background;
+  grid-area: side1;
+    background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
     grid-column-start: 2;
