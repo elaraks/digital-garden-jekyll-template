@@ -8,8 +8,11 @@ $border-radius: 4px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
+header {
+  background-image:url('../assets/dampheat.png'); }
+
 body {
-  background-image:url('../assets/dampheat.png') 0px 0px 0px 30px;
+  background:white;
   box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
