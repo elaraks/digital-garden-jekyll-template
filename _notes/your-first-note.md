@@ -78,7 +78,7 @@ If you'd like to quote other people, consider using quote blocks:
 
 And of course, images look great:
 
-<img src="/assets/image.jpg"/>
+<img src="/assets/Dampheat.png"/>
 
 You can also ==highlight some content== by wrapping it with `==`.
 
