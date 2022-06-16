@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
  {% include head.html %}
- <header>
   <body>
     <nav>{% include nav.html %}</nav>
     <div class="wrapper">
       {{ content }}
-      <footer>{% include footer.html %}</footer>
     </div>
     {% include link-previews.html wrapperQuerySelector="content" %}
   </body>
- </header>
 </html>
