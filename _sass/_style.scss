@@ -16,7 +16,7 @@ body {
   overflow-x: hidden;
   color: $color-text;
   font-size: 1rem;
-  max-width: 63em;
+  max-width: 60em;
 
   @media (min-width: 820px) {
     font-size: 1.2rem;
@@ -120,6 +120,20 @@ nav {
     grid-template-areas: "content side";
   }
 }
+
+#notes-graph-container {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-areas:
+        "content"
+        "side";
+    
+    @media (min-width: 700px) {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "content side"
+    }
+}
+
 
 .backlink-box {
   background: $color-box-background;

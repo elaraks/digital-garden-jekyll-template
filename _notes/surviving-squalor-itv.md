@@ -1,5 +1,5 @@
 ---
-title: Surviving Squalor&#58; Britain's Housing Shame
+title: ! 'Surviving Squalor: Britain's Housing Shame'
 ---
 
 # Welcome
