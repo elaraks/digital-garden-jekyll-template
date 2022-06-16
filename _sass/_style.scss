@@ -20,6 +20,7 @@ body {
   color: $color-text;
   font-size: 1rem;
   max-width: 80em;
+  min-height: 100%;
 
   @media (min-width: 820px) {
     font-size: 1.2rem;
@@ -129,7 +130,7 @@ nav {
     "content" "2";
 
   @media (min-width: 700px) {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1.5fr;
     grid-template-rows: 1.5fr 1.5fr;
     grid-template-areas: 
         "content 1"
