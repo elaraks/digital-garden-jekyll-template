@@ -30,9 +30,9 @@ body {
 main {
    background: rgba(255, 255, 255, 0.9);
    padding: 4vh 4vw;
+   max-width: 80em;
 
 }
-
 
 time {
   display: block;
@@ -160,7 +160,7 @@ nav {
   background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
-      grid-column-start: 2;
+    grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 1-start;
     grid-column-end: 1-end;
