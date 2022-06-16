@@ -4,6 +4,6 @@ title: About
 permalink: /about
 ---
 
-*This is an about page.*
+This 
 
-Feel free to tell the world about what you love! 😍
+Read more about the [[organising principles]] of this archive. 
