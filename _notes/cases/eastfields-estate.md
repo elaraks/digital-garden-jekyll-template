@@ -1,10 +1,12 @@
 ---
-title: Eastfields Estate
+title: Eastfields estate
 ---
 
 ### Summary
 
+[[Clarion]]
 
+in [[Mitcham]]
 
 ### Timeline
 

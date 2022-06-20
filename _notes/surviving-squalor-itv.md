@@ -9,6 +9,6 @@ Hewitt's framing for the investigation emerged in 2017 from his reporting on chi
 <img src="/assets/media/Hewitt1.jpeg"/>
 <sub>Reporter Daniel Hewitt, in front of Regina Road. Photographed by Sam Meillish for *Inside Housing*</sub>
 
-Key focuses of the investigation were [[Croydon]] council's [[regina-road|Regina Road]] and the [[Clarion]]-run [[eastfields|Eastfields estate]] in [[Mitcham]]. The spotlight given to these two sites in particular has held a lasting significance in 
+Key focuses of the investigation were [[Croydon]] council's [[regina-road|Regina Road]] and the [[Clarion]]-run [[eastfields-estate|Eastfields estate]] in [[Mitcham]]. The spotlight given to these two sites in particular has held a lasting significance in 
 
 One of the interviewees, [[Kwajo Tweneboa]] ee
