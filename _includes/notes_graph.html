@@ -19,7 +19,7 @@
   .nodes [active],
   .text [active] {
     cursor: pointer;
-    fill: black;
+    fill: #7faaa3;
   }
 
   .inactive {
@@ -107,9 +107,9 @@
       });
            link.attr("stroke-opacity", (link_d) => {
         if (link_d.source.id === d.id || link_d.target.id === d.id) {
-          return 1;
+          return "opacity" * 4;
         }
-        return STROKE;
+        return "";
       });
       text.attr("class", (text_d) => {
         if (text_d.id !== d.id && !relatedNodesSet.has(text_d.id)) {
