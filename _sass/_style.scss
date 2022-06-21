@@ -5,14 +5,14 @@ $color-border: hsl(0, 0%, 85%);
 $color-background: hsl(60, 100%, 95%);
 $color-box-background: mix($color-primary, white, 4%);
 $border-radius: 4px;
-$font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+$font-family:"Porpora-Regular", "Helvetica Neue Light", "Helvetica Neue", 
   Helvetica, Arial, "Lucida Grande", sans-serif;
 
 body {
   background:url('../assets/dampheat.png') center center no-repeat; 
   background-size: cover;
   box-sizing: content-box;
-  font-family: "Porpora-Regular", san-serif;
+  font-family: "Porpora-Regular", sans-serif;
   margin: 0 auto;
   line-height: 1.7;
   padding: 2vh 3vw;
@@ -31,6 +31,8 @@ body {
 main {
    background: rgba(255, 255, 255, 0.9);
    padding: 2vh 3vw;
+   font-family: "Porpora-Regular", sans-serif;
+
 
 }
 
@@ -85,6 +87,10 @@ h6 {
   margin-bottom: 0;
   padding-bottom: 0;
   font-family: "Garamond", serif;
+}
+
+body {
+    font-family: "Porpora-Regular", sans-serif;
 }
 
 a {
