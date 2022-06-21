@@ -35,11 +35,10 @@ layout: default
       {% endif %}
           
     </div></side>
+     
+     <time datetime="{{ page.last_modified_at | date_to_xmlschema }}"><sub>{% if page.type != 'pages' %} Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
+      {% endif %}</sub></time>
       
   </div>
-    
-<time datetime="{{ page.last_modified_at | date_to_xmlschema }}"><sub>{% if page.type != 'pages' %} Last updated on {{ page.last_modified_at | date: "%B %-d, %Y" }}
-      {% endif %}</sub>
-    </time>
 </article>
 <hr>
