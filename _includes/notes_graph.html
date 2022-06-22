@@ -1,6 +1,7 @@
 <style>
   .links line {
-    stroke: #ffffe6;
+    stroke: #ffffd6;
+    opacity: 1; 
   }
 
   .nodes circle {
@@ -103,8 +104,7 @@
           return STROKE * 4;
         }
         return STROKE;
-      });
-        
+      });       
       text.attr("class", (text_d) => {
         if (text_d.id !== d.id && !relatedNodesSet.has(text_d.id)) {
           return "inactive";
