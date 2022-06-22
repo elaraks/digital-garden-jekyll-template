@@ -1,7 +1,7 @@
 <style>
   .links line {
-    stroke: #ffffd6;
-    opacity: 1; 
+    stroke: #333;
+    opacity: 0.5; 
   }
 
   .nodes circle {
@@ -47,7 +47,7 @@
     const FONT_SIZE = 16;
     const TICKS = 200;
     const FONT_BASELINE = 40;
-    const MAX_LABEL_LENGTH = 50;
+    const MAX_LABEL_LENGTH = 6;
 
     const graphData = {% include notes_graph.json %}
     let nodesData = graphData.nodes;
