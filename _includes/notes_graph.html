@@ -179,31 +179,26 @@
     };
 
     window.onresize = reportWindowSize;
+      
+    const forceNode = d3.forceManyBody();
+    const forceLink = d3.forceLink(links).id(({index: i}) => N[i]);
+    if (nodeStrength !== undefined) forceNode.strength(nodeStrength);
+    if (linkStrength !== undefined) forceLink.strength(linkStrength);
+      
+    const simulation = d3.forceSimulation(nodesData)
+      .force("link", forceLink)
+      .force("charge", forceNode)
+      .force("center", d3.forceCenter())
+      .on("tick", ticked); 
 
     const svg = d3.select("svg");
     const width = Number(svg.attr("width"));
     const height = Number(svg.attr("height"));
     let zoomLevel = 1;
 
-    const simulation = d3
-      .forceSimulation(nodesData)
-      .force("forceX", d3.forceX().x(width / 2))
-      .force("forceY", d3.forceY().y(height / 2))
-      .force("charge", d3.forceManyBody())
-      .force(
-        "link",
-        d3
-          .forceLink(linksData)
-          .id((d) => d.id)
-          .distance(70)
-      )
-      .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(80))
-      .stop();
-
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node");
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").join(".node").attr("r", nodeRadius).call(drag(simulation));
     let text = g.append("g").attr("class", "text").selectAll(".text");
 
     const resize = () => {
@@ -304,5 +299,31 @@
       if (str.length <= maxLen) return str;
       return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
     }
+       function drag(simulation) {    
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
+
+  return Object.assign(svg.node(), {scales: {color}});
+    
   </script>
 </div>
