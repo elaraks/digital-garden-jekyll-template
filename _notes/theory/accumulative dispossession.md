@@ -2,4 +2,9 @@
 title: Accumulative disposession
 ---
 
-<img src="/assets/theory/The-social-cleansing-of-London-council-estates-everyday-experiences-of-accumulative-dispossession.pdf"/>
+
+<object data="/assets/theory/Lees-White-accumulativedisposession.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="/assets/theory/Lees-White-accumulativedisposession.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/assets/theory/Lees-White-accumulativedisposession.pdf">Download PDF</a>.</p>
+</object>
+
