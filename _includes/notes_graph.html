@@ -101,14 +101,14 @@
 
       link.attr("stroke-width", (link_d) => {
         if (link_d.source.id === d.id || link_d.target.id === d.id) {
-          return STROKEWIDTH * 2 .transition(all 0.15s ease-in);
+          return STROKEWIDTH * 2;
         }
         return STROKEWIDTH;
       });       
         
       link.attr("stroke-opacity", (link_d) => {
           if (link_d.source.id === d.id || link_d.target.id === d.id) {
-            return STROKEOPACITY * 4 .transition(all 0.15s ease-in); 
+            return STROKEOPACITY * 4; 
           }
           return STROKEOPACITY;
       });
