@@ -1,4 +1,5 @@
 ---
+caption: Clarion
 title: Clarion Housing Group
 ---
 

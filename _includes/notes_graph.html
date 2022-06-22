@@ -105,12 +105,14 @@
         }
         return STROKE;
       });
-           link.attr("stroke-opacity", (link_d) => {
+        
+      link.attr("stroke-opacity", (link_d) => {
         if (link_d.source.id === d.id || link_d.target.id === d.id) {
-          return "opacity" * 4;
+          return "opacity" = 1;
         }
         return "";
       });
+        
       text.attr("class", (text_d) => {
         if (text_d.id !== d.id && !relatedNodesSet.has(text_d.id)) {
           return "inactive";
@@ -124,6 +126,7 @@
       link.attr("class", "");
       text.attr("class", "");
       link.attr("stroke-width", STROKE);
+      link.attr("stroke-opacity", "");   
     };
 
     const sameNodes = (previous, next) => {
@@ -138,7 +141,7 @@
 
       for (const node of next) {
         const found = map.get(node.id);
-        if (!found || found !== node.title) {
+        if (!found || found !== node.caption) {
           return false;
         }
       }
@@ -218,6 +221,7 @@
       text.attr("font-size", (d) => font);
       text.attr("y", (d) => d.y - zoomOrKeep(FONT_BASELINE) + 8);
       link.attr("stroke-width", zoomOrKeep(STROKE));
+      link.attr("stroke-width", zoomOrKeep(OPACIT));
       node.attr("r", (d) => {
         return zoomOrKeep(nodeSize[d.id]);
       });
