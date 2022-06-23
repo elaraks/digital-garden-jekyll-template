@@ -192,9 +192,10 @@
       .force("charge", d3.forceManyBody())
       .force("link", d3.forceLink(linksData)
           .id((d) => d.id)
-          .distance(function(d) { return d.distance; }).strength(1))
+          .distance(function(d) { return d.distance; }).strength(0.1))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(80));
+      .force("collision", d3.forceCollide().radius(80))
+      .on("tick",ticked);
     
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
