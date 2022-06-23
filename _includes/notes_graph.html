@@ -194,8 +194,6 @@
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
     
-    const g = svg.append("g");
-    
     const link = svg.append("g")
       .attr("class", "links")
       .selectAll(".link");
@@ -203,29 +201,17 @@
     const node = svg.append("g")
       .attr("class", "nodes")
       .selectAll(".node")
-      .call(drag);
       
-    const text = svg.append("g")
+    const node = svg.append("g")
       .attr("class", "text")
       .selectAll(".text");    
       
-   const drag = d3.drag()
-     .on('start', node => {
-    node.fx = node.x
-    node.fy = node.y
-  })
-  .on('drag', node => {
-    simulation.alphaTarget(0.7).restart()
-    node.fx = d3.event.x
-    node.fy = d3.event.y
-  })
-  .on('end', node => {
-    if (!d3.event.active) {
-      simulation.alphaTarget(0)
-    }
-    node.fx = null
-    node.fy = null
-  });
+    const drag_controls = d3.drag()
+     .on("start",dragstarted)
+     .on("drag",dragged)
+     .on("end",dragended);
+
+    drag_controls(node);
    
     const resize = () => {
       if (d3.event) {
@@ -317,7 +303,24 @@
     zoomHandler(svg);
     restart();
       
-      
+   function dragstarted(d) {
+     d3.event.sourceEvent.stopPropagation();
+     if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
+     d.fx = d.x;
+     d.fy = d.y;
+    }
+
+   function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+   }
+
+   function dragended(d) {
+     if (!d3.event.active) graphLayout.alphaTarget(0);
+     d.fx = null;
+     d.fy = null;
+   }
+
     function isCurrentPath(notePath) {
       return window.location.pathname.includes(notePath)
     }
