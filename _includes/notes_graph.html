@@ -190,15 +190,14 @@
       .force("forceX", d3.forceX().x(width / 2))
       .force("forceY", d3.forceY().y(height / 2))
       .force("charge", d3.forceManyBody())
-      .force(
-        "link",
-        d3
-          .forceLink(linksData)
-          .id((d) => d.id)
-          .distance(70)
-      )
+      .force("link", d3.forceLink(linkDistance).strength(0.1))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
+      
+    function linkDistance(d) {
+    return d.distance;
+}
+
     
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
