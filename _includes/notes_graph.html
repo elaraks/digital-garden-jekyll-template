@@ -194,8 +194,7 @@
           .id((d) => d.id)
           .distance(function(d) {return d.distance;}).strength(0.1))
       .force("center", d3.forceCenter(width / 2, height / 2))
-      .force("collision", d3.forceCollide().radius(80))
-      .on("tick",ticked);
+      .force("collision", d3.forceCollide().radius(80));
     
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
