@@ -197,10 +197,9 @@
       const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
     let node = g.append("g").attr("class", "nodes").selectAll(".node");
-    let text = g.append("g").attr("class", "text").selectAll(".text");
-   
+    let text = g.append("g").attr("class", "text").selectAll(".text");   
       
-    const drag_controls = d3.drag()
+    const drag_controls = d3.behaviour.drag()
      .on("start",dragstarted)
      .on("drag",dragged)
      .on("end",dragended);
