@@ -204,10 +204,10 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(force.drag);
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(force(drag);
     let text = g.append("g").attr("class", "text").selectAll(".text");
 
-     const drag = force.drag()
+     var drag = force.drag()
      .origin(function(d) { return d;})
      .on("dragstart", dragstarted)
      .on("drag", dragged)
@@ -235,7 +235,7 @@
       .on("drag", dragged)
       .on("end", dragended);
   }
-  return Object.assign(svg.node(), {scales: {color}});
+  return Object.assign(svg.node());
 }
         
     const resize = () => {
