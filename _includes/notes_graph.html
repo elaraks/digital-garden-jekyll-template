@@ -204,7 +204,7 @@
      .on("drag",dragged)
      .on("end",dragended);
       
-    d3.select("node").call(drag);
+    d3.select("circle").call(drag);
    
     const resize = () => {
       if (d3.event) {
