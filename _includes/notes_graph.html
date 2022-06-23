@@ -207,21 +207,13 @@
     let node = g.append("g").attr("class", "nodes").selectAll(".node").call(drag(simulation));
     let text = g.append("g").attr("class", "text").selectAll(".text");
 
-     var drag = function ForceGraph {
+     var drag = drag(simulation) {
      .origin(function(d) { return d;})
      .on("dragstart", dragstarted)
      .on("drag", dragged)
      .on("dragend", dragended);
      }
       
-    function ForceGraph(nodes,links) {
-    if link.attr("stroke-width", ({index: i}) => STROKEWIDTH[i]);
-    if (invalidation != null) invalidation.then(() => simulation.stop());
-
-  function intern(value) {
-    return value !== null && typeof value === "object" ? value.valueOf() : value;
-  }
-
     function drag(simulation) {    
     function dragstarted(event) {
       if (!event.active) simulation.alphaTarget(0.3).restart();
@@ -242,8 +234,6 @@
       .on("drag", dragged)
       .on("end", dragended);
   }
-  return Object.assign(svg.node());
-}
         
     const resize = () => {
       if (d3.event) {
