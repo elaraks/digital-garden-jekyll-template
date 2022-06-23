@@ -193,7 +193,8 @@
       .force("link", d3.forceLink().id(function(d){return d.id}))
       .force("center", d3.forceCenter(width / 2, height /2))
      .force("y", d3.forceY(0.01))
-      .force("x", d3.forceX(0.01));      
+      .force("x", d3.forceX(0.01))
+      .force("collision", d3.forceCollide().radius(60));
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
