@@ -198,7 +198,7 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node");
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(drag_controls);
     let text = g.append("g").attr("class", "text").selectAll(".text");
     
       
