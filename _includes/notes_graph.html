@@ -188,11 +188,9 @@
     const simulation = d3
       .forceSimulation(nodesData)
       .force("charge", d3.forceManyBody())
-      .force("link", d3.forceLink(linksData).id((d) => d.id).distance(70))
-      .force("center", d3.forceCenter())
-      .force("collision", d3.forceCollide().radius(80))
-      .stop();
-
+      .force("link", d3.forceLink().id(function(d){return d.id}))
+      .force("center", d3.forceCenter(width / 2, height /2))
+      .force("collision", d3.forceCollide().radius(80));
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
