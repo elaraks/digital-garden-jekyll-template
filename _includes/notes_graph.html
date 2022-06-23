@@ -195,10 +195,19 @@
       .force("collision", d3.forceCollide().radius(80));
     
     const g = svg.append("g");
-    let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(d3.drag);
-    let text = g.append("g").attr("class", "text").selectAll(".text");
     
+    const link = svg.append("g")
+      .attr("class", "links")
+      .selectAll(".link");
+      
+    const node = svg.append("g")
+      .attr("class", "nodes")
+      .selectAll(".node")
+      .call(d3.drag);
+      
+    const node = svg.append("g")
+      .attr("class", "text")
+      .selectAll(".text");    
       
     const drag_controls = d3.drag()
      .on("start",dragstarted)
