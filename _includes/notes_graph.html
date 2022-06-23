@@ -190,9 +190,7 @@
       .force("forceX", d3.forceX().x(width / 2))
       .force("forceY", d3.forceY().y(height / 2))
       .force("charge", d3.forceManyBody())
-      .force("link", d3.forceLink(linksData)
-          .id((d) => d.id)
-          .distance(function(d) {return d.distance;}).strength(0.1))
+      .force("link", d3.forceLink(linksData).id((d) => d.id).distance(70).strength(0.1))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
     
