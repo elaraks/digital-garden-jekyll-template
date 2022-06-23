@@ -194,7 +194,7 @@
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
       
-    function linkDistance(d) {
+      function linkDistance(d) {
     return d.distance;
 }
 
@@ -286,7 +286,7 @@
       text.attr("active", (d) => isCurrentPath(d.path) ? true : null);
 
       simulation.nodes(nodesData);
-      simulation.force("link").links(linksData);
+      simulation.force("link").links(linkDistance);
       simulation.alpha(1).restart();
       simulation.stop();
 
