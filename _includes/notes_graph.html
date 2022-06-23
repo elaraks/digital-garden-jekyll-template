@@ -199,12 +199,12 @@
     let node = g.append("g").attr("class", "nodes").selectAll(".node");
     let text = g.append("g").attr("class", "text").selectAll(".text");   
       
-     const drag = d3.behavior.drag()
+     const drag = d3.drag()
      .on("start",dragstarted)
      .on("drag",dragged)
      .on("end",dragended);
       
-      d3.select(".node").call(drag);
+    d3.select("node").call(drag);
    
     const resize = () => {
       if (d3.event) {
