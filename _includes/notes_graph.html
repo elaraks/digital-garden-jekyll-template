@@ -204,10 +204,10 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(d3.drag);
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(force(drag));
     let text = g.append("g").attr("class", "text").selectAll(".text");
 
-     const drag = function (d)) {
+     const drag = function force(drag) {
      .origin(function(d) { return d;})
      .on("dragstart", dragstarted)
      .on("drag", dragged)
