@@ -199,8 +199,8 @@
     let node = g.append("g").attr("class", "nodes").selectAll(".node");
     let text = g.append("g").attr("class", "text").selectAll(".text");   
       
-    const dragHandler = d3.drag()
-     .on("drag", function(dragmove));
+    const drag = d3.drag()
+     .on("drag",dragmove));
       
     d3.select("circle").call(drag);
    
