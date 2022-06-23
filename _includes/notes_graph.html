@@ -199,12 +199,14 @@
     let node = g.append("g").attr("class", "nodes").selectAll(".node");
     let text = g.append("g").attr("class", "text").selectAll(".text");   
       
-    const drag_controls = d3.behaviour.drag()
-     .on("start",dragstarted)
-     .on("drag",dragged)
-     .on("end",dragended);
-
-    drag_controls(node);
+      const drag = d3.behavior.drag().on("drag", dragMovement);
+      function dragMovement(d)
+        {
+            var dX = d3.event.x;
+            var dY = d3.event.y;
+            d3.select(this).attr("transform", "translate(" + dX + ", " + dY + ")");
+        }
+      d3.select("cirlce").call(drag);
    
     const resize = () => {
       if (d3.event) {
@@ -296,24 +298,6 @@
     zoomHandler(svg);
     restart();
       
-   function dragstarted(d) {
-     d3.event.sourceEvent.stopPropagation();
-     if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
-     d.fx = d.x;
-     d.fy = d.y;
-    }
-
-   function dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-   }
-
-   function dragended(d) {
-     if (!d3.event.active) graphLayout.alphaTarget(0);
-     d.fx = null;
-     d.fy = null;
-   }
-
     function isCurrentPath(notePath) {
       return window.location.pathname.includes(notePath)
     }
