@@ -204,30 +204,28 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(drag(simulation));
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(force.drag));
     let text = g.append("g").attr("class", "text").selectAll(".text");
 
-     const onDrag = function ForceGraph(nodes, links) {
-  if (W) link.attr("stroke-width", ({index: i}) => W[i]);
-  if (G) node.attr("fill", ({index: i}) => color(G[i]));
-  if (T) node.append("title").text(({index: i}) => T[i]);
-  if (invalidation != null) invalidation.then(() => simulation.stop());
-
-  function intern(value) {
-    return value !== null && typeof value === "object" ? value.valueOf() : value;
-  }
-
-  function drag(simulation) {    
-    function dragstarted(event) {
+     const drag = force.drag()
+     .origin(function(d) { return d;})
+     .on("dragstart", dragstarted)
+     .on("drag", dragged)
+     .on("dragend", dragended);
+     
+      
+    function ForceGraph(nodes,links) {
+    function force(drag) {    
+    function dragstarted(d) {
       if (!event.active) simulation.alphaTarget(0.3).restart();
       event.subject.fx = event.subject.x;
       event.subject.fy = event.subject.y;
     }
-    function dragged(event) {
+    function dragged(d) {
       event.subject.fx = event.x;
       event.subject.fy = event.y;
     }
-    function dragended(event) {
+    function dragended(d) {
       if (!event.active) simulation.alphaTarget(0);
       event.subject.fx = null;
       event.subject.fy = null;
