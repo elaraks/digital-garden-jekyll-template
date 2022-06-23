@@ -39,9 +39,9 @@
 
 <div id="graph-wrapper">
   <script>
-    const MINIMAL_NODE_SIZE = 8;
-    const MAX_NODE_SIZE = 12;
-    const ACTIVE_RADIUS_FACTOR = 1.5;
+    const MINIMAL_NODE_SIZE = 5;
+    const MAX_NODE_SIZE = 15;
+    const ACTIVE_RADIUS_FACTOR = 1;
     const STROKEWIDTH = 1;
     const STROKEOPACITY = 0.25;
     const FONT_SIZE = 16;
@@ -204,17 +204,13 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node");
-    let text = g.append("g").attr("class", "text").selectAll(".text");
-
-    node.call (
-     d3.drag()
+    let node = g.append("g").attr("class", "nodes").selectAll(".node");.call(d3.drag()
      .on("start", dragstarted)
      .on("drag", dragged)
      .on("end", dragended)
     );
+   let text = g.append("g").attr("class", "text").selectAll(".text");
 
-      
    function dragstarted(d) {
      d3.event.sourceEvent.stopPropagation();
      if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
