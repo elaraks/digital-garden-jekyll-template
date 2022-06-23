@@ -39,9 +39,9 @@
 
 <div id="graph-wrapper">
   <script>
-    const MINIMAL_NODE_SIZE = 5;
-    const MAX_NODE_SIZE = 15;
-    const ACTIVE_RADIUS_FACTOR = 1;
+    const MINIMAL_NODE_SIZE = 8;
+    const MAX_NODE_SIZE = 12;
+    const ACTIVE_RADIUS_FACTOR = 1.5;
     const STROKEWIDTH = 1;
     const STROKEOPACITY = 0.25;
     const FONT_SIZE = 16;
@@ -127,7 +127,7 @@
       link.attr("stroke-width", STROKEWIDTH);
       link.attr("stroke-opacity", STROKEOPACITY);
     };
-        
+
     const sameNodes = (previous, next) => {
       if (next.length !== previous.length) {
         return false;
@@ -204,13 +204,9 @@
 
     const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(d3.drag()
-     .on("start", dragstarted)
-     .on("drag", dragged)
-     .on("end", dragended)
-    );
-   let text = g.append("g").attr("class", "text").selectAll(".text");
-         
+    let node = g.append("g").attr("class", "nodes").selectAll(".node");
+    let text = g.append("g").attr("class", "text").selectAll(".text");
+
     const resize = () => {
       if (d3.event) {
         const scale = d3.event.transform;
@@ -246,7 +242,7 @@
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
     };
-      
+
     const restart = () => {
       updateNodeSize();
       node = node.data(nodesData, (d) => d.id);
@@ -300,24 +296,6 @@
 
     zoomHandler(svg);
     restart();
-      
-   function dragstarted(d) {
-     d3.event.sourceEvent.stopPropagation();
-     if (!d3.event.active) graphLayout.alphaTarget(0.3).restart();
-     d.fx = d.x;
-     d.fy = d.y;
-    }
-
-   function dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-   }
-
-   function dragended(d) {
-     if (!d3.event.active) graphLayout.alphaTarget(0);
-     d.fx = null;
-     d.fy = null;
-   }
 
     function isCurrentPath(notePath) {
       return window.location.pathname.includes(notePath)
@@ -327,7 +305,6 @@
       if (str.length <= maxLen) return str;
       return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
     }
-      
      
   </script>
 </div>
