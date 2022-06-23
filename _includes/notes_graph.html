@@ -194,17 +194,11 @@
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
     
-    const link = svg.append("g")
-      .attr("class", "links")
-      .selectAll(".link");
-      
-    const node = svg.append("g")
-      .attr("class", "nodes")
-      .selectAll(".node")
-      
-    const text = svg.append("g")
-      .attr("class", "text")
-      .selectAll(".text");    
+      const g = svg.append("g");
+    let link = g.append("g").attr("class", "links").selectAll(".link");
+    let node = g.append("g").attr("class", "nodes").selectAll(".node");
+    let text = g.append("g").attr("class", "text").selectAll(".text");
+   
       
     const drag_controls = d3.drag()
      .on("start",dragstarted)
