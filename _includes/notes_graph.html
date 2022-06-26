@@ -272,7 +272,7 @@
         .on("mouseout", onMouseout)
         .on("start",dragstarted)
         .on("drag",dragged)
-        .on("end",dragended));
+        .on("end",dragended)
         .merge(node);
 
       link = link.data(linksData, (d) => `${d.source.id}-${d.target.id}`);
