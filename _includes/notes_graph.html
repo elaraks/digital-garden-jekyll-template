@@ -127,6 +127,12 @@
       link.attr("stroke-width", STROKEWIDTH);
       link.attr("stroke-opacity", STROKEOPACITY);
     };
+      
+    const onDrag = d3.drag()
+     .on("drag",dragmove);
+      
+    d3.select("nodes").call(drag);
+
         
     const sameNodes = (previous, next) => {
       if (next.length !== previous.length) {
@@ -166,7 +172,28 @@
 
       return true;
     };
+      
+ function dragstarted(d)
+ { 
+    simulation.restart();
+    simulation.alpha(1.0);
+    d.fx = d.x;
+    d.fy = d.y;
+ }
 
+ function dragged(d)
+ {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+ }
+
+ function dragended(d)
+ {
+    d.fx = null;
+    d.fy = null;
+    simulation.alphaTarget(0.1);
+ }
+    
     const graphWrapper = document.getElementById('graph-wrapper')
     const element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     element.setAttribute("width", graphWrapper.getBoundingClientRect().width);
@@ -196,14 +223,9 @@
     
       const g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
-    let node = g.append("g").attr("class", "nodes").selectAll(".node");
+    let node = g.append("g").attr("class", "nodes").selectAll(".node").call(d3.drag().on("start",dragstarted).on("drag",dragged).on("end",dragended));
     let text = g.append("g").attr("class", "text").selectAll(".text");   
-      
-    const drag = d3.drag()
-     .on("drag",dragmove);
-      
-    d3.select("circle").call(drag);
-   
+         
     const resize = () => {
       if (d3.event) {
         const scale = d3.event.transform;
@@ -239,6 +261,7 @@
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
     };
+    
       
     const restart = () => {
       updateNodeSize();
@@ -294,12 +317,6 @@
     zoomHandler(svg);
     restart();
 
-   function dragmove(d) {
-    var x = d3.event.x;
-    var y = d3.event.y;
-    d3.select(this).attr("transform", "translate(" + x + "," + y + ")");
-}      
-    
     function isCurrentPath(notePath) {
       return window.location.pathname.includes(notePath)
     }
