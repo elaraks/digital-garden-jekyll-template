@@ -173,27 +173,6 @@
       return true;
     };
       
- function dragstarted(d)
- { 
-    simulation.restart();
-    simulation.alpha(1.0);
-    d.fx = d.x;
-    d.fy = d.y;
- }
-
- function dragged(d)
- {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
- }
-
- function dragended(d)
- {
-    d.fx = null;
-    d.fy = null;
-    simulation.alphaTarget(0.1);
- }
-    
     const graphWrapper = document.getElementById('graph-wrapper')
     const element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     element.setAttribute("width", graphWrapper.getBoundingClientRect().width);
@@ -326,6 +305,27 @@
       return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
     }
       
+      function dragstarted(d)
+ { 
+    simulation.restart();
+    simulation.alpha(1.0);
+    d.fx = d.x;
+    d.fy = d.y;
+ }
+
+ function dragged(d)
+ {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+ }
+
+ function dragended(d)
+ {
+    d.fx = null;
+    d.fy = null;
+    simulation.alphaTarget(0.1);
+ }
+     
      
   </script>
 </div>
