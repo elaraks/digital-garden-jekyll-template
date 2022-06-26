@@ -190,7 +190,7 @@
       .force("forceX", d3.forceX().x(width / 2))
       .force("forceY", d3.forceY().y(height / 2))
       .force("charge", d3.forceManyBody())
-      .force("link", d3.forceLink(linksData).id((d) => d.id).distance(70))
+      .force("link", d3.forceLink(linksData).id((d) => d.id).distance(70).strength(0.2))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
     
@@ -222,6 +222,28 @@
         .filter((_d, i, nodes) => d3.select(nodes[i]).attr("active"))
         .attr("r", (d) => zoomOrKeep(ACTIVE_RADIUS_FACTOR * nodeSize[d.id]));
     };
+      
+    const dragstarted(d)
+ { 
+    simulation.restart();
+    simulation.alpha(1.0);
+    d.fx = d.x;
+    d.fy = d.y;
+ }
+
+ const dragged(d)
+ {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+ }
+
+ const dragended(d)
+ {
+    d.fx = null;
+    d.fy = null;
+    simulation.alphaTarget(0.1);
+ }
+     
 
     const ticked = () => {
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
@@ -234,7 +256,6 @@
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
     };
-    
       
     const restart = () => {
       updateNodeSize();
@@ -249,6 +270,9 @@
         .on("click", onClick)
         .on("mouseover", onMouseover)
         .on("mouseout", onMouseout)
+        .on("start",dragstarted)
+        .on("drag",dragged)
+        .on("end",dragended));
         .merge(node);
 
       link = link.data(linksData, (d) => `${d.source.id}-${d.target.id}`);
@@ -298,28 +322,6 @@
       if (str.length <= maxLen) return str;
       return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
     }
-      
-      function dragstarted(d)
- { 
-    simulation.restart();
-    simulation.alpha(1.0);
-    d.fx = d.x;
-    d.fy = d.y;
- }
-
- function dragged(d)
- {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
- }
-
- function dragended(d)
- {
-    d.fx = null;
-    d.fy = null;
-    simulation.alphaTarget(0.1);
- }
-     
      
   </script>
 </div>
