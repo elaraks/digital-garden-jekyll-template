@@ -127,13 +127,7 @@
       link.attr("stroke-width", STROKEWIDTH);
       link.attr("stroke-opacity", STROKEOPACITY);
     };
-      
-    const onDrag = d3.drag()
-     .on("drag",dragmove);
-      
-    d3.select("nodes").call(drag);
-
-        
+              
     const sameNodes = (previous, next) => {
       if (next.length !== previous.length) {
         return false;
