@@ -66,17 +66,17 @@
         "sha512-FHsFVKQ/T1KWJDGSbrUhTJyS1ph3eRrxI228ND0EGaEp6v4a/vGwPWd3Dtd/+9cI7ccofZvl/wulICEurHN1pg==";
       document.body.appendChild(oScript);
       oScript.onload = () => {  
-          const MINIMAL_NODE_SIZE = 5;
-          const MAX_NODE_SIZE = 15;
-          const ACTIVE_RADIUS_FACTOR = 1.5;
-          const STROKEWIDTH = 1;
-          const STROKEOPACITY = 0.25;
-          const FONT_SIZE = 16;
-          const TICKS = 200;
-          const FONT_BASELINE = 40;
-          const MAX_LABEL_LENGTH = 40;
+          var MINIMAL_NODE_SIZE = 5;
+          var MAX_NODE_SIZE = 15;
+          var ACTIVE_RADIUS_FACTOR = 1.5;
+          var STROKEWIDTH = 1;
+          var STROKEOPACITY = 0.25;
+          var FONT_SIZE = 16;
+          var TICKS = 200;
+          var FONT_BASELINE = 40;
+          var MAX_LABEL_LENGTH = 40;
 
-          const graphData = {% include notes_graph.json %}
+          var graphData = {% include notes_graph.json %}
           let nodesData = graphData.nodes;
           let linksData = graphData.edges;
 
