@@ -319,7 +319,7 @@
       
 var optArray = [];
     for (var i = 0; i <node.length - 1; i++) {
-        optArray.push(node.title);
+        optArray.push(node[i].id);
     }
     optArray = optArray.sort();
     $(function () {
@@ -330,19 +330,23 @@ var optArray = [];
     function searchNode() {
         //find the node
         var selectedVal = document.getElementById('search').value;
-        //node = svg.selectAll(".node");
+        var node = svg.selectAll(".node");
         if (selectedVal == "none") {
             node.style("stroke", "white").style("stroke-width", "1");
-
         } else {
-            var selected = node.filter(function (d, i) {
-                return d.title == selectedVal;
+            var selected = node.filter(function (d) {
+                return d.id == selectedVal;
             });
+            
             node.style("opacity", 0);
             selected.style("opacity", "1").attr("fill", "red");
+            
             var link = svg.selectAll(".link")
-                .style("opacity", 0);           
-            d3.selectAll(".node, .link").transition()
+                .style("opacity", 0); 
+            node.transition()
+                .duration(5000)
+                .style("opacity", 1);
+            link.transition()
                 .duration(5000)
                 .style("opacity", 1);
         }
