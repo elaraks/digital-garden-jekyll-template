@@ -1,6 +1,8 @@
 ---
-title: survey
+title: Survey
 ---
+
+Survey used to collect experiences of damp housing. 
 
 <object data="/assets/methods/Survey.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="/assets/methods/Survey.pdf">
