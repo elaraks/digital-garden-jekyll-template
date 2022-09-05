@@ -80,9 +80,9 @@
           let nodesData = graphData.nodes;
           let linksData = graphData.edges;
 
-          const nodeSize = {};
+          var nodeSize = {};
 
-        const updateNodeSize = () => {
+        var updateNodeSize = () => {
             nodesData.forEach((el) => {
                 let weight =
                     3 *
@@ -99,12 +99,12 @@
             });
         };
 
-        const onClick = (d) => {
+        var onClick = (d) => {
          window.location = d.path
         };
 
-        const onMouseover = function (d) {
-         const relatedNodesSet = new Set();
+        var onMouseover = function (d) {
+         var relatedNodesSet = new Set();
         linksData
          .filter((n) => n.target.id == d.id || n.source.id == d.id)
          .forEach((n) => {
@@ -147,7 +147,7 @@
       });
     };
 
-    const onMouseout = function (d) {
+    var onMouseout = function (d) {
       node.attr("class", "");
       link.attr("class", "");
       text.attr("class", "");
@@ -155,25 +155,25 @@
       link.attr("stroke-opacity", STROKEOPACITY);
     };
       
-    const dragstarted = function (d) { 
+    var dragstarted = function (d) { 
     simulation.restart();
     simulation.alpha(1.0);
     d.fx = d.x;
     d.fy = d.y;
  };
 
-    const dragged = function (d) {
+    var dragged = function (d) {
     d.fx = d3.event.x;
     d.fy = d3.event.y;
  };
 
-    const dragended = function (d) {
+    var dragended = function (d) {
     d.fx = null;
     d.fy = null;
     simulation.alphaTarget(0.1);
  };
               
-    const sameNodes = (previous, next) => {
+    var sameNodes = (previous, next) => {
       if (next.length !== previous.length) {
         return false;
       }
@@ -193,7 +193,7 @@
       return true;
     };
 
-    const sameEdges = (previous, next) => {
+    var sameEdges = (previous, next) => {
       if (next.length !== previous.length) {
         return false;
       }
@@ -236,27 +236,26 @@
                 .style("opacity", 1);
         }
     })
-
-      
-    const graphWrapper = document.getElementById('graph-wrapper')
+    
+    var graphWrapper = document.getElementById('graph-wrapper')
     const element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     element.setAttribute("width", graphWrapper.getBoundingClientRect().width);
     element.setAttribute("height", window.innerHeight * 0.8);
     graphWrapper.appendChild(element);
 
-    const reportWindowSize = () => {
+    var reportWindowSize = () => {
       element.setAttribute("width", window.innerWidth);
       element.setAttribute("height", window.innerHeight);
     };
 
     window.onresize = reportWindowSize;
       
-    const svg = d3.select("svg");
-    const width = Number(svg.attr("width"));
-    const height = Number(svg.attr("height"));
+    var svg = d3.select("svg");
+    var width = Number(svg.attr("width"));
+    var height = Number(svg.attr("height"));
     let zoomLevel = 1;
 
-    const simulation = d3
+    var simulation = d3
       .forceSimulation(nodesData)
       .force("forceX", d3.forceX().x(width / 2))
       .force("forceY", d3.forceY().y(height / 2))
@@ -265,21 +264,21 @@
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(80));
     
-      const g = svg.append("g");
+      var g = svg.append("g");
     let link = g.append("g").attr("class", "links").selectAll(".link");
     let node = g.append("g").attr("class", "nodes").selectAll(".node").call(d3.drag().on("start",dragstarted).on("drag",dragged).on("end",dragended));
     let text = g.append("g").attr("class", "text").selectAll(".text");   
          
-    const resize = () => {
+    var resize = () => {
       if (d3.event) {
         const scale = d3.event.transform;
         zoomLevel = scale.k;
         g.attr("transform", scale);
       }
 
-      const zoomOrKeep = (value) => (zoomLevel >= 1 ? value / zoomLevel : value);
+      var zoomOrKeep = (value) => (zoomLevel >= 1 ? value / zoomLevel : value);
 
-      const font = Math.max(Math.round(zoomOrKeep(FONT_SIZE)), 1);
+      var font = Math.max(Math.round(zoomOrKeep(FONT_SIZE)), 1);
 
       text.attr("font-size", (d) => font);
       text.attr("y", (d) => d.y - zoomOrKeep(FONT_BASELINE) + 8);
@@ -294,7 +293,7 @@
         .attr("r", (d) => zoomOrKeep(ACTIVE_RADIUS_FACTOR * nodeSize[d.id]));
     };
 
-    const ticked = () => {
+    var ticked = () => {
       node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
       text
         .attr("x", (d) => d.x)
@@ -306,7 +305,7 @@
         .attr("y2", (d) => d.target.y);
     };
 
-    const restart = () => {
+    var restart = () => {
       updateNodeSize();
       node = node.data(nodesData, (d) => d.id);
       node.exit().remove();
@@ -358,7 +357,7 @@
       ticked();
     };
             
-    const zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
+    var zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
 
     zoomHandler(svg);
     restart();
