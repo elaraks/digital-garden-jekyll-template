@@ -317,8 +317,8 @@
       ticked();
     };
       
-var optArray = [];
-    for (var i = 0; i <node.length - 1; i++) {
+const optArray = [];
+    for (const i = 0; i <node.length - 1; i++) {
         optArray.push(node[i].id);
     }
     optArray = optArray.sort();
@@ -329,19 +329,19 @@ var optArray = [];
     });
     function searchNode() {
         //find the node
-        var selectedVal = document.getElementById('search').value;
-        var node = svg.selectAll(".node");
+        const selectedVal = document.getElementById('search').value;
+        const node = svg.selectAll(".node");
         if (selectedVal == "none") {
             node.style("stroke", "white").style("stroke-width", "1");
         } else {
-            var selected = node.filter(function (d) {
+            const selected = node.filter(function (d) {
                 return d.id == selectedVal;
-            });
+            }git );
             
             node.style("opacity", 0);
             selected.style("opacity", "1").attr("fill", "red");
             
-            var link = svg.selectAll(".link")
+            const link = svg.selectAll(".link")
                 .style("opacity", 0); 
             node.transition()
                 .duration(5000)
