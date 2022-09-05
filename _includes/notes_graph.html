@@ -49,6 +49,9 @@
 
     window.addEventListener("load", loadGraph);
     window.addEventListener("scroll", loadGraph);
+    
+    var myBtn = document.getElementById
+    ("search");
 
     function loadGraph() {
       if (!( document.getElementById("graph-wrapper").getBoundingClientRect().top <
@@ -208,6 +211,32 @@
 
       return true;
     };
+    
+    myBtn.addEventListener("click", function () { 
+        //find the node
+        var selectedVal = document.getElementById('node').value;
+        var node = svg.selectAll(".node");
+        if (selectedVal == "none") {
+            node.style("stroke", "white").style("stroke-width", "1");
+        } else {
+            const selected = node.filter(function (d) {
+                return d.id == selectedVal;
+            });
+            
+            node.style("opacity", 0);
+            selected.style("opacity", "1").attr("fill", "red");
+            
+            var link = svg.selectAll(".link")
+                .style("opacity", 0); 
+            node.transition()
+                .duration(5000)
+                .style("opacity", 1);
+            link.transition()
+                .duration(5000)
+                .style("opacity", 1);
+        }
+    }
+
       
     const graphWrapper = document.getElementById('graph-wrapper')
     const element = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -328,32 +357,7 @@
 
       ticked();
     };
-      
-    function searchNode() {
-        //find the node
-        var selectedVal = document.getElementById('search').value;
-        var node = svg.selectAll(".node");
-        if (selectedVal == "none") {
-            node.style("stroke", "white").style("stroke-width", "1");
-        } else {
-            const selected = node.filter(function (d) {
-                return d.id == selectedVal;
-            });
             
-            node.style("opacity", 0);
-            selected.style("opacity", "1").attr("fill", "red");
-            
-            var link = svg.selectAll(".link")
-                .style("opacity", 0); 
-            node.transition()
-                .duration(5000)
-                .style("opacity", 1);
-            link.transition()
-                .duration(5000)
-                .style("opacity", 1);
-        }
-    }
-      
     const zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
 
     zoomHandler(svg);
