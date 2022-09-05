@@ -332,18 +332,16 @@ var optArray = [];
         var selectedVal = document.getElementById('search').value;
         //node = svg.selectAll(".node");
         if (selectedVal == "none") {
-            node.style("#cd0000");
-            link.style("#cd0000", "stroke-width", "1");
-            text.style("#cd0000");
-            
+            node.style("stroke", "white").style("stroke-width", "1");
+
         } else {
             var selected = node.filter(function (d, i) {
-                return d.title != selectedVal;
+                return d.title == selectedVal;
             });
-            selected.style("opacity", "0");
-            //var link = svg.selectAll(".link")
-            link.style("opacity", "0");
-            text.style("opacity", "0")
+            node.style("opacity", 0);
+            selected.style("opacity", "1").attr("fill", "red");
+            var link = svg.selectAll(".link")
+                .style("opacity", 0);           
             d3.selectAll(".node, .link").transition()
                 .duration(5000)
                 .style("opacity", 1);
