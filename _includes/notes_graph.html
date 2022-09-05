@@ -317,20 +317,10 @@
       ticked();
     };
       
-var optArray = [];
-    for (const i = 0; i <node.length - 1; i++) {
-        optArray.push(node[i].id);
-    }
-    optArray = optArray.sort();
-    $(function () {
-        $("#search").autocomplete({
-            source: optArray
-        });
-    });
     function searchNode() {
         //find the node
-        const selectedVal = document.getElementById('search').value;
-        const node = svg.selectAll(".node");
+        var selectedVal = document.getElementById('search').value;
+        var node = svg.selectAll(".node");
         if (selectedVal == "none") {
             node.style("stroke", "white").style("stroke-width", "1");
         } else {
@@ -341,7 +331,7 @@ var optArray = [];
             node.style("opacity", 0);
             selected.style("opacity", "1").attr("fill", "red");
             
-            const link = svg.selectAll(".link")
+            var link = svg.selectAll(".link")
                 .style("opacity", 0); 
             node.transition()
                 .duration(5000)
