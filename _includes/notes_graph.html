@@ -33,12 +33,12 @@
   }
 </style>
 
-<div id="graph-wrapper">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/theme.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script>
 
+<div id="graph-wrapper">
 <div class="ui-widget">
         <input tyle="text" id="node">
         <button id="search">Search</button>
@@ -366,7 +366,9 @@
       if (str.length <= maxLen) return str;
       return str.substr(0, str.lastIndexOf(separator, maxLen)) + '...';
     }
+          commentFlag = false;
+          
       }
-     
+  }
   </script>
 </div>
